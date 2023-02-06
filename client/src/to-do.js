@@ -1,6 +1,6 @@
 
 import React, { Fragment, useState, useEffect, useRef } from "react";
-import "./utility.css"
+import "./to_do.css"
 
 function ToDoApp() {
 
@@ -71,16 +71,16 @@ function ToDoApp() {
 
   return (
     <Fragment>
-      <div>
-        <h1 style={{ textAlign: "center" }}>TO-DO List</h1>
-        <span style={{ textAlign: "center", display: "block" }}> {currentTime}</span>
+      <div className="body">
+        <h1 className="heading">TO-DO List App</h1>
+        <h1 className="heading-2"> {currentTime}</h1>
       </div>
 
       {/* Input Area Code */}
       <div className="todo-body">
         <form onSubmit={handleSubmit}>
           <span className="span-box">Enter The Task</span>
-          <input className="input-style" type="text" placeholder="Add item here!" ref={inputRef} value={todoName}
+          <input className="input-style" type="text"  ref={inputRef} value={todoName}
             onChange={(e) => setTodoName(e.target.value)} required />
           <input className="btn-1" type="submit" value="Add" />
         </form>
@@ -93,7 +93,7 @@ function ToDoApp() {
             return (
               <li className="singleName" key={to_do_list.todo_id}>
                 <span style={{ flex: "1" }}>{to_do_list.todo_name}</span>
-                <button onClick={() => handleDelete(to_do_list.todo_id)}><i className="fa-solid fa-x"></i></button>
+                <div onClick={() => handleDelete(to_do_list.todo_id)}><i class="fa-regular fa-trash-can"></i></div>
               </li>
             )
           })}
