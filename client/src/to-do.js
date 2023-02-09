@@ -80,7 +80,7 @@ function ToDoApp() {
       <div className="todo-body">
         <form onSubmit={handleSubmit}>
           <span className="span-box">Enter The Task</span>
-          <input className="input-style" type="text"  ref={inputRef} value={todoName}
+          <input className="input-style" type="text" ref={inputRef} value={todoName}
             onChange={(e) => setTodoName(e.target.value)} required />
           <input className="btn-1" type="submit" value="Add" />
         </form>
